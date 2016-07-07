@@ -60,6 +60,13 @@ public class KMPlaceholderTextView: UITextView {
         }
     }
     
+    public var placeholderBackground: UIColor? {
+        didSet {
+            let color = (placeholderBackground != nil) ? placeholderBackground : UIColor.clearColor()
+            placeholderLabel.backgroundColor = color
+        }
+    }
+    
     override public var textAlignment: NSTextAlignment {
         didSet {
             placeholderLabel.textAlignment = textAlignment
